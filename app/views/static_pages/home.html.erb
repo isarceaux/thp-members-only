@@ -1,2 +1,10 @@
-<h1>Welcome</h1>
-<p>You are on an (almost) empty website.</p>
+<h1>Welcome!</h1>
+
+<% if logged_in? %>
+  <p>Congratulations, you can have the answer to Life, the Universe and Everything, by clicking on the following button!</p>
+  <%= button_to "Oh yeah!", static_pages_mysterious_page_path, method: 'get' %>
+<% else %>
+  <p>If you want to have the answer to Life, the Universe and Everything, please log in!</p>
+  <%= button_to "Log In", login_path, method: 'get' %>
+
+<% end %>
