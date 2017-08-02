@@ -1,6 +1,7 @@
 Rails.application.routes.draw do 
 
-  get 'sessions/new'
+  get '/login', to: 'sessions#new'
+  post '/login', to: 'sessions#create'
 
   root to: 'static_pages#home'
   get 'static_pages/mysterious_page'
